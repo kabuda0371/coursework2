@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="1">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="ROLE" org.eventb.core.type="ℙ(ROLE)"/>
+        <org.eventb.core.poIdentifier name="STATUS" org.eventb.core.type="ℙ(STATUS)"/>
+        <org.eventb.core.poIdentifier name="REQUEST" org.eventb.core.type="ℙ(REQUEST)"/>
+        <org.eventb.core.poIdentifier name="TEAM" org.eventb.core.type="ℙ(TEAM)"/>
+        <org.eventb.core.poIdentifier name="USER" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="LOG" org.eventb.core.type="ℙ(LOG)"/>
+        <org.eventb.core.poIdentifier name="approved" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="surveyor_role" org.eventb.core.type="ROLE"/>
+        <org.eventb.core.poIdentifier name="completed" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="customer_role" org.eventb.core.type="ROLE"/>
+        <org.eventb.core.poIdentifier name="team_role" org.eventb.core.type="ROLE"/>
+        <org.eventb.core.poIdentifier name="allocated" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="new_request" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="admin_role" org.eventb.core.type="ROLE"/>
+        <org.eventb.core.poIdentifier name="started" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="closed" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="assessed" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="pending_assessment" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="rejected" org.eventb.core.type="STATUS"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Coursework2/MySoton.bpo|org.eventb.core.poFile#MySoton|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(STATUS,{new_request},{pending_assessment},{assessed},{approved},{rejected},{allocated},{started},{completed},{closed})" org.eventb.core.source="/Coursework2/MySoton.buc|org.eventb.core.contextFile#MySoton|org.eventb.core.axiom#2"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="partition(ROLE,{customer_role},{surveyor_role},{admin_role},{team_role})" org.eventb.core.source="/Coursework2/MySoton.buc|org.eventb.core.contextFile#MySoton|org.eventb.core.axiom#:"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>
