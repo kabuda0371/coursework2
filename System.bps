@@ -15,4 +15,10 @@
     <org.eventb.core.psStatus name="INITIALISATION/inv14/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="14" org.eventb.core.psManual="false"/>
     <org.eventb.core.psStatus name="INITIALISATION/inv16/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="14" org.eventb.core.psManual="false"/>
     <org.eventb.core.psStatus name="INITIALISATION/inv17/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="14" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="register_customer/inv2/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="17" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="register_customer/inv5/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="17" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="register_customer/inv6/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="17" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="register_customer/inv7/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="17" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="register_customer/inv10/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="17" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="register_customer/inv17/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="17" org.eventb.core.psManual="false"/>
 </org.eventb.core.psFile>

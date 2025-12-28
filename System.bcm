@@ -65,4 +65,10 @@
         <org.eventb.core.scAction name="1" org.eventb.core.assignment="log_req ≔ ∅ ⦂ ℙ(LOG×REQUEST)" org.eventb.core.label="act11" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#F|org.eventb.core.action#1"/>
         <org.eventb.core.scAction name="2" org.eventb.core.assignment="log_actor ≔ ∅ ⦂ ℙ(LOG×USER)" org.eventb.core.label="act12" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#F|org.eventb.core.action#2"/>
     </org.eventb.core.scEvent>
+    <org.eventb.core.scEvent name="cost_decisiop" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="register_customer" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#G">
+        <org.eventb.core.scGuard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="u∈USER ∖ registered" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#G|org.eventb.core.guard#'" org.eventb.core.theorem="false"/>
+        <org.eventb.core.scParameter name="u" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#G|org.eventb.core.parameter#(" org.eventb.core.type="USER"/>
+        <org.eventb.core.scAction name="v" org.eventb.core.assignment="registered ≔ registered∪{u}" org.eventb.core.label="act1" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#G|org.eventb.core.action#)"/>
+        <org.eventb.core.scAction name="w" org.eventb.core.assignment="role ≔ role{u ↦ customer_role}" org.eventb.core.label="act2" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#G|org.eventb.core.action#*"/>
+    </org.eventb.core.scEvent>
 </org.eventb.core.scMachineFile>
