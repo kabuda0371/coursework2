@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="1">
-    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poFile org.eventb.core.poStamp="6">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="3">
         <org.eventb.core.poIdentifier name="ROLE" org.eventb.core.type="ℙ(ROLE)"/>
         <org.eventb.core.poIdentifier name="STATUS" org.eventb.core.type="ℙ(STATUS)"/>
         <org.eventb.core.poIdentifier name="REQUEST" org.eventb.core.type="ℙ(REQUEST)"/>
@@ -20,23 +20,63 @@
         <org.eventb.core.poIdentifier name="assessed" org.eventb.core.type="STATUS"/>
         <org.eventb.core.poIdentifier name="pending_assessment" org.eventb.core.type="STATUS"/>
         <org.eventb.core.poIdentifier name="rejected" org.eventb.core.type="STATUS"/>
-        <org.eventb.core.poPredicate name="pending_assessmenu" org.eventb.core.predicate="partition(STATUS,{new_request},{pending_assessment},{assessed},{approved},{rejected},{allocated},{started},{completed},{closed})" org.eventb.core.source="/Coursework2/MySoton.buc|org.eventb.core.contextFile#MySoton|org.eventb.core.axiom#2"/>
-        <org.eventb.core.poPredicate name="pending_assessmenv" org.eventb.core.predicate="partition(ROLE,{customer_role},{surveyor_role},{admin_role},{team_role})" org.eventb.core.source="/Coursework2/MySoton.buc|org.eventb.core.contextFile#MySoton|org.eventb.core.axiom#:"/>
+        <org.eventb.core.poPredicate name="pending_assessmenu" org.eventb.core.predicate="partition(STATUS,{new_request},{pending_assessment},{assessed},{approved},{rejected},{allocated},{started},{completed},{closed})" org.eventb.core.source="/CW2/MySoton.buc|org.eventb.core.contextFile#MySoton|org.eventb.core.axiom#2"/>
+        <org.eventb.core.poPredicate name="pending_assessmenv" org.eventb.core.predicate="partition(ROLE,{customer_role},{surveyor_role},{admin_role},{team_role})" org.eventb.core.source="/CW2/MySoton.buc|org.eventb.core.contextFile#MySoton|org.eventb.core.axiom#:"/>
     </org.eventb.core.poPredicateSet>
-    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="1">
-        <org.eventb.core.poIdentifier name="job_surveyor" org.eventb.core.type="ℙ(REQUEST×USER)"/>
-        <org.eventb.core.poIdentifier name="users" org.eventb.core.type="ℙ(USER)"/>
-        <org.eventb.core.poIdentifier name="job_team" org.eventb.core.type="ℙ(REQUEST×TEAM)"/>
-        <org.eventb.core.poIdentifier name="job_status" org.eventb.core.type="ℙ(REQUEST×STATUS)"/>
-        <org.eventb.core.poIdentifier name="jobs" org.eventb.core.type="ℙ(REQUEST)"/>
-        <org.eventb.core.poIdentifier name="job_cost" org.eventb.core.type="ℙ(REQUEST×ℤ)"/>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/CW2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="6">
+        <org.eventb.core.poIdentifier name="role" org.eventb.core.type="ℙ(USER×ROLE)"/>
+        <org.eventb.core.poIdentifier name="req_status" org.eventb.core.type="ℙ(REQUEST×STATUS)"/>
+        <org.eventb.core.poIdentifier name="log_actor" org.eventb.core.type="ℙ(LOG×USER)"/>
+        <org.eventb.core.poIdentifier name="req_customer" org.eventb.core.type="ℙ(REQUEST×USER)"/>
+        <org.eventb.core.poIdentifier name="req_surveyor" org.eventb.core.type="ℙ(REQUEST×USER)"/>
+        <org.eventb.core.poIdentifier name="log_req" org.eventb.core.type="ℙ(LOG×REQUEST)"/>
+        <org.eventb.core.poIdentifier name="req_cost" org.eventb.core.type="ℙ(REQUEST×ℤ)"/>
+        <org.eventb.core.poIdentifier name="cost_decision" org.eventb.core.type="ℙ(REQUEST×BOOL)"/>
+        <org.eventb.core.poIdentifier name="registered" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="started_jobs" org.eventb.core.type="ℙ(REQUEST)"/>
+        <org.eventb.core.poIdentifier name="job_logs" org.eventb.core.type="ℙ(LOG)"/>
+        <org.eventb.core.poIdentifier name="requests" org.eventb.core.type="ℙ(REQUEST)"/>
     </org.eventb.core.poPredicateSet>
-    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1">
-        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="users⊆USER" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#\/"/>
-        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="jobs⊆REQUEST" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#0"/>
-        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="job_status∈REQUEST → STATUS" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#1"/>
-        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="job_team∈jobs ⇸ TEAM" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#3"/>
-        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="job_surveyor∈jobs ⇸ users" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#4"/>
-        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="job_cost∈jobs ⇸ ℕ" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#5"/>
+    <org.eventb.core.poSequent name="inv6/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="6">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/CW2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotos"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r⦂REQUEST·r∈requests⇒r∈dom(req_customer)∧req_customer∈REQUEST ⇸ USER∧req_customer(r)∈dom(role)∧role∈USER ⇸ ROLE" org.eventb.core.source="/CW2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/CW2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/CW2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/CW2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotos"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="inv9/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="6">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/CW2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotov"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r⦂REQUEST·r∈dom(req_surveyor)⇒req_surveyor∈REQUEST ⇸ USER∧req_surveyor(r)∈dom(role)∧role∈USER ⇸ ROLE" org.eventb.core.source="/CW2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#&gt;"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/CW2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#&gt;"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/CW2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/CW2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotov"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="inv13/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="6">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/CW2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotoz"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r⦂REQUEST·r∈started_jobs⇒r∈dom(req_status)∧req_status∈REQUEST ⇸ STATUS" org.eventb.core.source="/CW2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/CW2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/CW2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/CW2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotoz"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="HYPMySotos" org.eventb.core.parentSet="/CW2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="registered⊆USER" org.eventb.core.source="/CW2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#\/"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="role∈registered → ROLE" org.eventb.core.source="/CW2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#0"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="requests⊆REQUEST" org.eventb.core.source="/CW2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#1"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="req_status∈requests → STATUS" org.eventb.core.source="/CW2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="req_customer∈requests → registered" org.eventb.core.source="/CW2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#3"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPMySotov" org.eventb.core.parentSet="/CW2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotos" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="∀r⦂REQUEST·r∈requests⇒role(req_customer(r))=customer_role" org.eventb.core.source="/CW2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="req_surveyor∈requests ⇸ registered" org.eventb.core.source="/CW2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#5"/>
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="req_surveyor∈requests ⇸ registered" org.eventb.core.source="/CW2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#="/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPMySotoz" org.eventb.core.parentSet="/CW2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotov" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="∀r⦂REQUEST·r∈dom(req_surveyor)⇒role(req_surveyor(r))=surveyor_role" org.eventb.core.source="/CW2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#&gt;"/>
+        <org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="req_cost∈requests ⇸ ℕ" org.eventb.core.source="/CW2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#?"/>
+        <org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="cost_decision∈requests ⇸ BOOL" org.eventb.core.source="/CW2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#@"/>
+        <org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="started_jobs⊆requests" org.eventb.core.source="/CW2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#A"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/CW2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotoz" org.eventb.core.poStamp="6">
+        <org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="∀r⦂REQUEST·r∈started_jobs⇒req_status(r)=started" org.eventb.core.source="/CW2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="job_logs⊆LOG" org.eventb.core.source="/CW2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#C"/>
+        <org.eventb.core.poPredicate name="PRD14" org.eventb.core.predicate="log_req∈job_logs → requests" org.eventb.core.source="/CW2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#D"/>
+        <org.eventb.core.poPredicate name="PRD15" org.eventb.core.predicate="log_actor∈job_logs → registered" org.eventb.core.source="/CW2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#E"/>
     </org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>
