@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+    <org.eventb.core.variable name="(" org.eventb.core.identifier="users"/>
+    <org.eventb.core.variable name=")" org.eventb.core.identifier="jobs"/>
+    <org.eventb.core.variable name="*" org.eventb.core.identifier="job_status"/>
+    <org.eventb.core.variable name="+" org.eventb.core.identifier="job_owner"/>
+    <org.eventb.core.variable name="," org.eventb.core.identifier="job_team"/>
+    <org.eventb.core.variable name="-" org.eventb.core.identifier="job_surveyor"/>
+    <org.eventb.core.variable name="." org.eventb.core.identifier="job_cost"/>
+    <org.eventb.core.invariant name="/" org.eventb.core.label="inv1" org.eventb.core.predicate="users ⊆ USER"/>
+    <org.eventb.core.invariant name="0" org.eventb.core.label="inv2" org.eventb.core.predicate="jobs ⊆ REQUEST"/>
+    <org.eventb.core.invariant name="1" org.eventb.core.label="inv3" org.eventb.core.predicate="job_status ∈ REQUEST → STATUS"/>
+    <org.eventb.core.invariant name="2" org.eventb.core.label="inv4" org.eventb.core.predicate="job_owner ∈ REQUEST → us"/>
+    <org.eventb.core.invariant name="3" org.eventb.core.label="inv5" org.eventb.core.predicate="job_team ∈ jobs ⇸ TEAM"/>
+    <org.eventb.core.invariant name="4" org.eventb.core.label="inv6" org.eventb.core.predicate="job_surveyor ∈ jobs ⇸ users"/>
+    <org.eventb.core.invariant name="5" org.eventb.core.label="inv7" org.eventb.core.predicate="job_cost ∈ jobs ⇸ ℕ"/>
+    <org.eventb.core.seesContext name="6" org.eventb.core.target="MySoton"/>
+</org.eventb.core.machineFile>
