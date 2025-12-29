@@ -41,11 +41,87 @@
         <org.eventb.core.action name="0" org.eventb.core.assignment="job_logs ≔ ∅" org.eventb.core.label="act10"/>
         <org.eventb.core.action name="1" org.eventb.core.assignment="log_req ≔ ∅" org.eventb.core.label="act11"/>
         <org.eventb.core.action name="2" org.eventb.core.assignment="log_actor ≔ ∅" org.eventb.core.label="act12"/>
+        <org.eventb.core.action name="3" org.eventb.core.assignment="open_jobs ≔ ∅" org.eventb.core.label="act13"/>
+        <org.eventb.core.action name="4" org.eventb.core.assignment="req_ServiceTeam ≔ ∅ " org.eventb.core.label="act14"/>
     </org.eventb.core.event>
     <org.eventb.core.event name="G" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="register_customer">
         <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="u ∈ USER ∖ registered"/>
         <org.eventb.core.parameter name="(" org.eventb.core.identifier="u"/>
         <org.eventb.core.action name=")" org.eventb.core.assignment="registered ≔ registered ∪ {u}" org.eventb.core.label="act1"/>
         <org.eventb.core.action name="*" org.eventb.core.assignment="role(u) ≔ customer_role" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="H" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="complete_work">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="r"/>
+        <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="r ∈ requests"/>
+        <org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="req_status(r) = started"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd3" org.eventb.core.predicate="r ∈ started_jobs"/>
+        <org.eventb.core.action name="+" org.eventb.core.assignment="req_status(r) ≔ completed" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="," org.eventb.core.assignment="started_jobs ≔ started_jobs ∖ {r}" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="I" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="close_job">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="r"/>
+        <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="r ∈ requests"/>
+        <org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="req_status(r) = completed"/>
+        <org.eventb.core.action name="*" org.eventb.core.assignment="req_status(r) ≔ closed" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="J" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="list_outstanding job">
+        <org.eventb.core.action name="'" org.eventb.core.assignment="act1∈ open_jobs ≔ { r ∣ r ∈ requests ∧ req_status(r) = started }" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.variable name="K" org.eventb.core.identifier="open_jobs"/>
+    <org.eventb.core.invariant name="L" org.eventb.core.label="inv18" org.eventb.core.predicate="open_jobs ⊆ requests"/>
+    <org.eventb.core.invariant name="M" org.eventb.core.label="inv19" org.eventb.core.predicate="open_jobs = { r ∣ r ∈ requests ∧ req_status(r) = started }"/>
+    <org.eventb.core.variable name="N" org.eventb.core.identifier="req_ServiceTeam"/>
+    <org.eventb.core.invariant name="O" org.eventb.core.label="inv20" org.eventb.core.predicate="req_ServiceTeam ∈ requests ⇸ TEAM ¬ theorem "/>
+    <org.eventb.core.event name="P" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="customer_accept">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="u"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="r"/>
+        <org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="u ∈ registered"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="r ∈ requests"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="req_customer(r) = u"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="req_status(r) = assessed"/>
+        <org.eventb.core.action name="-" org.eventb.core.assignment="req_status(r) ≔ approved" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="." org.eventb.core.assignment="cost_decision(r) ≔ TRUE" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="Q" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="customer_reject">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="u"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="r"/>
+        <org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="u ∈ registered"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="r ∈ requests"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="req_customer(r) = u"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="req_status(r) = assessed"/>
+        <org.eventb.core.action name="-" org.eventb.core.assignment="req_status(r) ≔ rejected" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="." org.eventb.core.assignment="cost_decision(r) ≔ FALSE" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="R" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="allocate_team">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="u"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="r"/>
+        <org.eventb.core.parameter name=")" org.eventb.core.identifier="t"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="u ∈ registered"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="role(u) = admin_role "/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="r ∈ requests"/>
+        <org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="req_status(r) = approved"/>
+        <org.eventb.core.guard name="." org.eventb.core.label="grd5" org.eventb.core.predicate="t ∈ TEAM"/>
+        <org.eventb.core.action name="/" org.eventb.core.assignment="req_status(r) ≔ allocated" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="0" org.eventb.core.assignment="req_ServiceTeam(r) ≔ t" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="S" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="start_job">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="r"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="t"/>
+        <org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="r ∈ requests"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="req_status(r) = allocated "/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="req_ServiceTeam(r) = t"/>
+        <org.eventb.core.action name="," org.eventb.core.assignment="req_status(r) ≔ started" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="-" org.eventb.core.assignment="started_jobs ≔ started_jobs ∪ {r}" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="T" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="report_progress">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="u"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="r"/>
+        <org.eventb.core.parameter name=")" org.eventb.core.identifier="l"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="u ∈ registered"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="r ∈ started_jobs"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="l ∈ LOG ∖ job_logs"/>
+        <org.eventb.core.action name="-" org.eventb.core.assignment="job_logs ≔ job_logs ∪ {l}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="." org.eventb.core.assignment="log_req(l) ≔ r" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="/" org.eventb.core.assignment="log_actor(l) ≔ u" org.eventb.core.label="act3"/>
     </org.eventb.core.event>
 </org.eventb.core.machineFile>
