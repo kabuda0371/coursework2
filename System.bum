@@ -65,13 +65,13 @@
         <org.eventb.core.action name="*" org.eventb.core.assignment="req_status(r) ≔ closed" org.eventb.core.label="act1"/>
     </org.eventb.core.event>
     <org.eventb.core.event name="J" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="list_outstanding job">
-        <org.eventb.core.action name="'" org.eventb.core.assignment="act1∈ open_jobs ≔ { r ∣ r ∈ requests ∧ req_status(r) = started }" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="'" org.eventb.core.assignment="open_jobs ≔ { r ∣ r ∈ requests ∧ req_status(r) = started }" org.eventb.core.label="act1"/>
     </org.eventb.core.event>
     <org.eventb.core.variable name="K" org.eventb.core.identifier="open_jobs"/>
     <org.eventb.core.invariant name="L" org.eventb.core.label="inv18" org.eventb.core.predicate="open_jobs ⊆ requests"/>
     <org.eventb.core.invariant name="M" org.eventb.core.label="inv19" org.eventb.core.predicate="open_jobs = { r ∣ r ∈ requests ∧ req_status(r) = started }"/>
     <org.eventb.core.variable name="N" org.eventb.core.identifier="req_ServiceTeam"/>
-    <org.eventb.core.invariant name="O" org.eventb.core.label="inv20" org.eventb.core.predicate="req_ServiceTeam ∈ requests ⇸ TEAM ¬ theorem "/>
+    <org.eventb.core.invariant name="O" org.eventb.core.label="inv20" org.eventb.core.predicate="req_ServiceTeam ∈ requests ⇸ TEAM  "/>
     <org.eventb.core.event name="P" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="customer_accept">
         <org.eventb.core.parameter name="'" org.eventb.core.identifier="u"/>
         <org.eventb.core.parameter name="(" org.eventb.core.identifier="r"/>
