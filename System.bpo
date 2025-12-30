@@ -1,0 +1,917 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="ROLE" org.eventb.core.type="ℙ(ROLE)"/>
+        <org.eventb.core.poIdentifier name="STATUS" org.eventb.core.type="ℙ(STATUS)"/>
+        <org.eventb.core.poIdentifier name="REQUEST" org.eventb.core.type="ℙ(REQUEST)"/>
+        <org.eventb.core.poIdentifier name="TEAM" org.eventb.core.type="ℙ(TEAM)"/>
+        <org.eventb.core.poIdentifier name="USER" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="LOG" org.eventb.core.type="ℙ(LOG)"/>
+        <org.eventb.core.poIdentifier name="approved" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="surveyor_role" org.eventb.core.type="ROLE"/>
+        <org.eventb.core.poIdentifier name="completed" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="customer_role" org.eventb.core.type="ROLE"/>
+        <org.eventb.core.poIdentifier name="team_role" org.eventb.core.type="ROLE"/>
+        <org.eventb.core.poIdentifier name="allocated" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="new_request" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="admin_role" org.eventb.core.type="ROLE"/>
+        <org.eventb.core.poIdentifier name="started" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="closed" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="assessed" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="pending_assessment" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poIdentifier name="rejected" org.eventb.core.type="STATUS"/>
+        <org.eventb.core.poPredicate name="pending_assessmenu" org.eventb.core.predicate="partition(STATUS,{new_request},{pending_assessment},{assessed},{approved},{rejected},{allocated},{started},{completed},{closed})" org.eventb.core.source="/Coursework2/MySoton.buc|org.eventb.core.contextFile#MySoton|org.eventb.core.axiom#2"/>
+        <org.eventb.core.poPredicate name="pending_assessmenv" org.eventb.core.predicate="partition(ROLE,{customer_role},{surveyor_role},{admin_role},{team_role})" org.eventb.core.source="/Coursework2/MySoton.buc|org.eventb.core.contextFile#MySoton|org.eventb.core.axiom#:"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="role" org.eventb.core.type="ℙ(USER×ROLE)"/>
+        <org.eventb.core.poIdentifier name="req_status" org.eventb.core.type="ℙ(REQUEST×STATUS)"/>
+        <org.eventb.core.poIdentifier name="open_jobs" org.eventb.core.type="ℙ(REQUEST)"/>
+        <org.eventb.core.poIdentifier name="log_actor" org.eventb.core.type="ℙ(LOG×USER)"/>
+        <org.eventb.core.poIdentifier name="req_customer" org.eventb.core.type="ℙ(REQUEST×USER)"/>
+        <org.eventb.core.poIdentifier name="req_surveyor" org.eventb.core.type="ℙ(REQUEST×USER)"/>
+        <org.eventb.core.poIdentifier name="log_req" org.eventb.core.type="ℙ(LOG×REQUEST)"/>
+        <org.eventb.core.poIdentifier name="req_cost" org.eventb.core.type="ℙ(REQUEST×ℤ)"/>
+        <org.eventb.core.poIdentifier name="cost_decision" org.eventb.core.type="ℙ(REQUEST×BOOL)"/>
+        <org.eventb.core.poIdentifier name="registered" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="started_jobs" org.eventb.core.type="ℙ(REQUEST)"/>
+        <org.eventb.core.poIdentifier name="req_ServiceTeam" org.eventb.core.type="ℙ(REQUEST×TEAM)"/>
+        <org.eventb.core.poIdentifier name="job_logs" org.eventb.core.type="ℙ(LOG)"/>
+        <org.eventb.core.poIdentifier name="requests" org.eventb.core.type="ℙ(REQUEST)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="inv6/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotos"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r⦂REQUEST·r∈requests⇒r∈dom(req_customer)∧req_customer∈REQUEST ⇸ USER∧req_customer(r)∈dom(role)∧role∈USER ⇸ ROLE" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotos"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="inv10/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotou"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r⦂REQUEST·r∈dom(req_surveyor)⇒req_surveyor∈REQUEST ⇸ USER∧req_surveyor(r)∈dom(role)∧role∈USER ⇸ ROLE" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#&gt;"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#&gt;"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotou"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="inv14/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotoy"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r⦂REQUEST·r∈started_jobs⇒r∈dom(req_status)∧req_status∈REQUEST ⇸ STATUS" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotoy"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="inv19/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySoto~"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r⦂REQUEST·r∈requests⇒r∈dom(req_status)∧req_status∈REQUEST ⇸ STATUS" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySoto~"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTean"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(USER×ROLE))∈(∅ ⦂ ℙ(USER)) → ROLE" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#0"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#F"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#0"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#INITIALISATION\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotos|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTean"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(REQUEST×STATUS))∈(∅ ⦂ ℙ(REQUEST)) → STATUS" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#F"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#INITIALISATION\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotos|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTean"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(REQUEST×USER))∈(∅ ⦂ ℙ(REQUEST)) → (∅ ⦂ ℙ(USER))" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#3"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#F"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#3"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#INITIALISATION\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotos|org.eventb.core.poPredicate#PRD4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTean"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r⦂REQUEST·r∈(∅ ⦂ ℙ(REQUEST))⇒(∅ ⦂ ℙ(USER×ROLE))((∅ ⦂ ℙ(REQUEST×USER))(r))=customer_role" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#F"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#INITIALISATION\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotou|org.eventb.core.poPredicate#PRD5"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTean"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(REQUEST×USER))∈(∅ ⦂ ℙ(REQUEST)) ⇸ (∅ ⦂ ℙ(USER))" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#5"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#F"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#5"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#INITIALISATION\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotou|org.eventb.core.poPredicate#PRD6"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv10/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTean"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r⦂REQUEST·r∈dom(∅ ⦂ ℙ(REQUEST×USER))⇒(∅ ⦂ ℙ(USER×ROLE))((∅ ⦂ ℙ(REQUEST×USER))(r))=surveyor_role" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#&gt;"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#F"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#&gt;"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#INITIALISATION\/inv10\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotoy|org.eventb.core.poPredicate#PRD7"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv11/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTean"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(REQUEST×ℤ))∈(∅ ⦂ ℙ(REQUEST)) ⇸ ℕ" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#?"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#F"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#?"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#INITIALISATION\/inv11\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotoy|org.eventb.core.poPredicate#PRD8"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv12/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTean"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(REQUEST×BOOL))∈(∅ ⦂ ℙ(REQUEST)) ⇸ BOOL" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#@"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#F"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#@"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#INITIALISATION\/inv12\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotoy|org.eventb.core.poPredicate#PRD9"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv13/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTean"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(REQUEST))⊆(∅ ⦂ ℙ(REQUEST))" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#A"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#F"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#A"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#INITIALISATION\/inv13\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotoy|org.eventb.core.poPredicate#PRD10"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv14/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTean"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r⦂REQUEST·r∈(∅ ⦂ ℙ(REQUEST))⇒(∅ ⦂ ℙ(REQUEST×STATUS))(r)=started" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#F"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#INITIALISATION\/inv14\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySoto~|org.eventb.core.poPredicate#PRD11"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv16/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTean"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(LOG×REQUEST))∈(∅ ⦂ ℙ(LOG)) → (∅ ⦂ ℙ(REQUEST))" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#D"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#F"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#D"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#INITIALISATION\/inv16\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySoto~|org.eventb.core.poPredicate#PRD13"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv17/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTean"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(LOG×USER))∈(∅ ⦂ ℙ(LOG)) → (∅ ⦂ ℙ(USER))" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#E"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#F"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#E"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#INITIALISATION\/inv17\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySoto~|org.eventb.core.poPredicate#PRD14"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv18/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTean"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(REQUEST))⊆(∅ ⦂ ℙ(REQUEST))" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#L"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#F"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#L"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#INITIALISATION\/inv18\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySoto~|org.eventb.core.poPredicate#PRD15"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv19/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTean"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(REQUEST))={r⦂REQUEST·r∈(∅ ⦂ ℙ(REQUEST))∧(∅ ⦂ ℙ(REQUEST×STATUS))(r)=started ∣ r}" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#F"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#INITIALISATION\/inv19\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD16"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv20/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTean"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(REQUEST×TEAM))∈(∅ ⦂ ℙ(REQUEST)) ⇸ TEAM" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#O"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#F"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#O"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#INITIALISATION\/inv20\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD17"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTreq_ServiceTean" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="job_logs'" org.eventb.core.type="ℙ(LOG)"/>
+        <org.eventb.core.poIdentifier name="req_surveyor'" org.eventb.core.type="ℙ(REQUEST×USER)"/>
+        <org.eventb.core.poIdentifier name="cost_decision'" org.eventb.core.type="ℙ(REQUEST×BOOL)"/>
+        <org.eventb.core.poIdentifier name="log_req'" org.eventb.core.type="ℙ(LOG×REQUEST)"/>
+        <org.eventb.core.poIdentifier name="registered'" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="log_actor'" org.eventb.core.type="ℙ(LOG×USER)"/>
+        <org.eventb.core.poIdentifier name="req_cost'" org.eventb.core.type="ℙ(REQUEST×ℤ)"/>
+        <org.eventb.core.poIdentifier name="req_customer'" org.eventb.core.type="ℙ(REQUEST×USER)"/>
+        <org.eventb.core.poIdentifier name="role'" org.eventb.core.type="ℙ(USER×ROLE)"/>
+        <org.eventb.core.poIdentifier name="req_ServiceTeam'" org.eventb.core.type="ℙ(REQUEST×TEAM)"/>
+        <org.eventb.core.poIdentifier name="requests'" org.eventb.core.type="ℙ(REQUEST)"/>
+        <org.eventb.core.poIdentifier name="req_status'" org.eventb.core.type="ℙ(REQUEST×STATUS)"/>
+        <org.eventb.core.poIdentifier name="started_jobs'" org.eventb.core.type="ℙ(REQUEST)"/>
+        <org.eventb.core.poIdentifier name="open_jobs'" org.eventb.core.type="ℙ(REQUEST)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPreq_ServiceTean" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTIDENTreq_ServiceTean" org.eventb.core.poStamp="0"/>
+    <org.eventb.core.poSequent name="1_register_customer/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeao"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="role{u ↦ customer_role}∈registered∪{u} → ROLE" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#0"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#G"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#0"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#1_register_customer\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotos|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="1_register_customer/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeao"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="req_customer∈requests → registered∪{u}" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#3"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#G"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#3"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#1_register_customer\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotos|org.eventb.core.poPredicate#PRD4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="1_register_customer/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeao"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r⦂REQUEST·r∈requests⇒(role{u ↦ customer_role})(req_customer(r))=customer_role" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#G"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#1_register_customer\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotou|org.eventb.core.poPredicate#PRD5"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="1_register_customer/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeao"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="req_surveyor∈requests ⇸ registered∪{u}" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#5"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#G"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#5"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#1_register_customer\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotou|org.eventb.core.poPredicate#PRD6"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="1_register_customer/inv10/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeao"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r⦂REQUEST·r∈dom(req_surveyor)⇒(role{u ↦ customer_role})(req_surveyor(r))=surveyor_role" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#&gt;"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#G"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#&gt;"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#1_register_customer\/inv10\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotoy|org.eventb.core.poPredicate#PRD7"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="1_register_customer/inv17/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeao"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="log_actor∈job_logs → registered∪{u}" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#E"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#G"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#E"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#1_register_customer\/inv17\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySoto~|org.eventb.core.poPredicate#PRD14"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTreq_ServiceTeao" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="u" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="registered'" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="role'" org.eventb.core.type="ℙ(USER×ROLE)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPreq_ServiceTeao" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTIDENTreq_ServiceTeao" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="u∈USER ∖ registered" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#G|org.eventb.core.guard#'"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="2_submit_request/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeap("/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="c∈dom(role)∧role∈USER ⇸ ROLE" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#U|org.eventb.core.guard#+"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#U|org.eventb.core.guard#+"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeap("/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="2_submit_request/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeap"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="req_status{r ↦ new_request}∈requests∪{r} → STATUS" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#U"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#2_submit_request\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotos|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="2_submit_request/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeap"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="req_customer{r ↦ c}∈requests∪{r} → registered" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#3"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#U"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#3"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#2_submit_request\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotos|org.eventb.core.poPredicate#PRD4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="2_submit_request/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeap"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r0⦂REQUEST·r0∈requests∪{r}⇒role((req_customer{r ↦ c})(r0))=customer_role" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#U"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#2_submit_request\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotou|org.eventb.core.poPredicate#PRD5"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="2_submit_request/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeap"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="req_surveyor∈requests∪{r} ⇸ registered" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#5"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#U"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#5"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#2_submit_request\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotou|org.eventb.core.poPredicate#PRD6"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="2_submit_request/inv11/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeap"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="req_cost∈requests∪{r} ⇸ ℕ" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#?"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#U"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#?"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#2_submit_request\/inv11\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotoy|org.eventb.core.poPredicate#PRD8"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="2_submit_request/inv12/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeap"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="cost_decision∈requests∪{r} ⇸ BOOL" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#@"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#U"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#@"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#2_submit_request\/inv12\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotoy|org.eventb.core.poPredicate#PRD9"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="2_submit_request/inv13/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeap"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="started_jobs⊆requests∪{r}" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#A"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#U"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#A"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#2_submit_request\/inv13\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotoy|org.eventb.core.poPredicate#PRD10"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="2_submit_request/inv14/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeap"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r0⦂REQUEST·r0∈started_jobs⇒(req_status{r ↦ new_request})(r0)=started" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#U"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#2_submit_request\/inv14\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySoto~|org.eventb.core.poPredicate#PRD11"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="2_submit_request/inv16/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeap"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="log_req∈job_logs → requests∪{r}" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#D"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#U"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#D"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#2_submit_request\/inv16\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySoto~|org.eventb.core.poPredicate#PRD13"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="2_submit_request/inv18/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeap"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="open_jobs⊆requests∪{r}" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#L"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#U"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#L"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#2_submit_request\/inv18\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySoto~|org.eventb.core.poPredicate#PRD15"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="2_submit_request/inv19/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeap"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="open_jobs={r0⦂REQUEST·r0∈requests∪{r}∧(req_status{r ↦ new_request})(r0)=started ∣ r0}" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#U"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#2_submit_request\/inv19\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD16"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="2_submit_request/inv20/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeap"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="req_ServiceTeam∈requests∪{r} ⇸ TEAM" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#O"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#U"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#O"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#2_submit_request\/inv20\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD17"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTreq_ServiceTeap" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="r" org.eventb.core.type="REQUEST"/>
+        <org.eventb.core.poIdentifier name="c" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="req_customer'" org.eventb.core.type="ℙ(REQUEST×USER)"/>
+        <org.eventb.core.poIdentifier name="requests'" org.eventb.core.type="ℙ(REQUEST)"/>
+        <org.eventb.core.poIdentifier name="req_status'" org.eventb.core.type="ℙ(REQUEST×STATUS)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPreq_ServiceTeap(" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTIDENTreq_ServiceTeap" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="r∈REQUEST ∖ requests" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#U|org.eventb.core.guard#'"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="c∈registered" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#U|org.eventb.core.guard#*"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPreq_ServiceTeap" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeap(" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="role(c)=customer_role" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#U|org.eventb.core.guard#+"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="3_allocate_surveyor/grd2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeaq'"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="r∈dom(req_status)∧req_status∈REQUEST ⇸ STATUS" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#V|org.eventb.core.guard#+"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#V|org.eventb.core.guard#+"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeaq'"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="3_allocate_surveyor/grd3/THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Theorem" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeaq("/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="s∈registered" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#V|org.eventb.core.guard#,"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#V|org.eventb.core.guard#,"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeaq("/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="3_allocate_surveyor/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeaq)"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="s∈dom(role)∧role∈USER ⇸ ROLE" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#V|org.eventb.core.guard#-"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#V|org.eventb.core.guard#-"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeaq)"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="3_allocate_surveyor/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeaq"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="req_status{r ↦ pending_assessment}∈requests → STATUS" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#V"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#3_allocate_surveyor\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotos|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="3_allocate_surveyor/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeaq"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="req_surveyor{r ↦ s}∈requests ⇸ registered" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#5"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#V"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#5"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#3_allocate_surveyor\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotou|org.eventb.core.poPredicate#PRD6"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="3_allocate_surveyor/inv10/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeaq"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r0⦂REQUEST·r0∈dom(req_surveyor{r ↦ s})⇒role((req_surveyor{r ↦ s})(r0))=surveyor_role" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#&gt;"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#V"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#&gt;"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#3_allocate_surveyor\/inv10\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotoy|org.eventb.core.poPredicate#PRD7"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="3_allocate_surveyor/inv14/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeaq"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r0⦂REQUEST·r0∈started_jobs⇒(req_status{r ↦ pending_assessment})(r0)=started" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#V"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#3_allocate_surveyor\/inv14\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySoto~|org.eventb.core.poPredicate#PRD11"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="3_allocate_surveyor/inv19/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeaq"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="open_jobs={r0⦂REQUEST·r0∈requests∧(req_status{r ↦ pending_assessment})(r0)=started ∣ r0}" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#V"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#3_allocate_surveyor\/inv19\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD16"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTreq_ServiceTeaq" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="req_surveyor'" org.eventb.core.type="ℙ(REQUEST×USER)"/>
+        <org.eventb.core.poIdentifier name="r" org.eventb.core.type="REQUEST"/>
+        <org.eventb.core.poIdentifier name="s" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="req_status'" org.eventb.core.type="ℙ(REQUEST×STATUS)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPreq_ServiceTeaq'" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTIDENTreq_ServiceTeaq" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="r∈requests" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#V|org.eventb.core.guard#*"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPreq_ServiceTeaq(" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeaq'" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="req_status(r)=new_request" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#V|org.eventb.core.guard#+"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPreq_ServiceTeaq)" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeaq(" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="s∈registered" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#V|org.eventb.core.guard#,"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPreq_ServiceTeaq" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeaq)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="role(s)=surveyor_role" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#V|org.eventb.core.guard#-"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="4_surveyor_assessment/grd2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTear'"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="r∈dom(req_status)∧req_status∈REQUEST ⇸ STATUS" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#W|org.eventb.core.guard#*"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#W|org.eventb.core.guard#*"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTear'"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="4_surveyor_assessment/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTear"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="req_status{r ↦ assessed}∈requests → STATUS" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#W"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#4_surveyor_assessment\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotos|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="4_surveyor_assessment/inv11/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTear"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="req_cost{r ↦ cost}∈requests ⇸ ℕ" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#?"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#W"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#?"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#4_surveyor_assessment\/inv11\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotoy|org.eventb.core.poPredicate#PRD8"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="4_surveyor_assessment/inv14/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTear"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r0⦂REQUEST·r0∈started_jobs⇒(req_status{r ↦ assessed})(r0)=started" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#W"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#4_surveyor_assessment\/inv14\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySoto~|org.eventb.core.poPredicate#PRD11"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="4_surveyor_assessment/inv19/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTear"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="open_jobs={r0⦂REQUEST·r0∈requests∧(req_status{r ↦ assessed})(r0)=started ∣ r0}" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#W"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#4_surveyor_assessment\/inv19\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD16"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTreq_ServiceTear" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="cost" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="r" org.eventb.core.type="REQUEST"/>
+        <org.eventb.core.poIdentifier name="req_cost'" org.eventb.core.type="ℙ(REQUEST×ℤ)"/>
+        <org.eventb.core.poIdentifier name="req_status'" org.eventb.core.type="ℙ(REQUEST×STATUS)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPreq_ServiceTear'" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTIDENTreq_ServiceTear" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="r∈requests" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#W|org.eventb.core.guard#)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPreq_ServiceTear" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTear'" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="req_status(r)=pending_assessment" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#W|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="r∈dom(req_surveyor)" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#W|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="cost∈ℕ" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#W|org.eventb.core.guard#,"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="complete_work/grd2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeas'"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="r∈dom(req_status)∧req_status∈REQUEST ⇸ STATUS" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#H|org.eventb.core.guard#)"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#H|org.eventb.core.guard#)"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeas'"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="complete_work/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeas"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="req_status{r ↦ completed}∈requests → STATUS" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#H"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#complete_work\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotos|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="complete_work/inv13/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeas"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="started_jobs ∖ {r}⊆requests" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#A"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#H"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#A"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#complete_work\/inv13\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotoy|org.eventb.core.poPredicate#PRD10"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="complete_work/inv14/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeas"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r0⦂REQUEST·r0∈started_jobs ∖ {r}⇒(req_status{r ↦ completed})(r0)=started" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#H"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#complete_work\/inv14\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySoto~|org.eventb.core.poPredicate#PRD11"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="complete_work/inv19/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeas"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="open_jobs={r0⦂REQUEST·r0∈requests∧(req_status{r ↦ completed})(r0)=started ∣ r0}" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#H"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#complete_work\/inv19\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD16"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTreq_ServiceTeas" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="r" org.eventb.core.type="REQUEST"/>
+        <org.eventb.core.poIdentifier name="req_status'" org.eventb.core.type="ℙ(REQUEST×STATUS)"/>
+        <org.eventb.core.poIdentifier name="started_jobs'" org.eventb.core.type="ℙ(REQUEST)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPreq_ServiceTeas'" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTIDENTreq_ServiceTeas" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="r∈requests" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#H|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPreq_ServiceTeas" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeas'" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="req_status(r)=started" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#H|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="r∈started_jobs" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#H|org.eventb.core.guard#*"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="close_job/grd2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeat'"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="r∈dom(req_status)∧req_status∈REQUEST ⇸ STATUS" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#I|org.eventb.core.guard#)"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#I|org.eventb.core.guard#)"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeat'"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="close_job/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeat"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="req_status{r ↦ closed}∈requests → STATUS" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#I"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#close_job\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotos|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="close_job/inv14/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeat"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r0⦂REQUEST·r0∈started_jobs⇒(req_status{r ↦ closed})(r0)=started" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#I"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#close_job\/inv14\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySoto~|org.eventb.core.poPredicate#PRD11"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="close_job/inv19/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeat"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="open_jobs={r0⦂REQUEST·r0∈requests∧(req_status{r ↦ closed})(r0)=started ∣ r0}" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#I"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#close_job\/inv19\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD16"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTreq_ServiceTeat" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="r" org.eventb.core.type="REQUEST"/>
+        <org.eventb.core.poIdentifier name="req_status'" org.eventb.core.type="ℙ(REQUEST×STATUS)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPreq_ServiceTeat'" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTIDENTreq_ServiceTeat" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="r∈requests" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#I|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPreq_ServiceTeat" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeat'" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="req_status(r)=completed" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#I|org.eventb.core.guard#)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="list_outstanding job/inv18/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeau"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{r⦂REQUEST·r∈requests∧req_status(r)=started ∣ r}⊆requests" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#L"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#J"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#L"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#list_outstanding job\/inv18\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySoto~|org.eventb.core.poPredicate#PRD15"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="list_outstanding job/inv19/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeau"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{r⦂REQUEST·r∈requests∧req_status(r)=started ∣ r}={r⦂REQUEST·r∈requests∧req_status(r)=started ∣ r}" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#J"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#list_outstanding job\/inv19\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD16"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="list_outstanding job/act1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeau"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r⦂REQUEST·r∈requests⇒r∈dom(req_status)∧req_status∈REQUEST ⇸ STATUS" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#J|org.eventb.core.action#'"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#J|org.eventb.core.action#'"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeau"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTreq_ServiceTeau" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="open_jobs'" org.eventb.core.type="ℙ(REQUEST)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPreq_ServiceTeau" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTIDENTreq_ServiceTeau" org.eventb.core.poStamp="0"/>
+    <org.eventb.core.poSequent name="customer_accept/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeav("/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="r∈dom(req_customer)∧req_customer∈REQUEST ⇸ USER" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#P|org.eventb.core.guard#+"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#P|org.eventb.core.guard#+"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeav("/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="customer_accept/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeav)"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="r∈dom(req_status)∧req_status∈REQUEST ⇸ STATUS" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#P|org.eventb.core.guard#,"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#P|org.eventb.core.guard#,"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeav)"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="customer_accept/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeav"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="req_status{r ↦ approved}∈requests → STATUS" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#P"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#customer_accept\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotos|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="customer_accept/inv12/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeav"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="cost_decision{r ↦ TRUE}∈requests ⇸ BOOL" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#@"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#P"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#@"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#customer_accept\/inv12\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotoy|org.eventb.core.poPredicate#PRD9"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="customer_accept/inv14/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeav"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r0⦂REQUEST·r0∈started_jobs⇒(req_status{r ↦ approved})(r0)=started" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#P"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#customer_accept\/inv14\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySoto~|org.eventb.core.poPredicate#PRD11"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="customer_accept/inv19/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeav"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="open_jobs={r0⦂REQUEST·r0∈requests∧(req_status{r ↦ approved})(r0)=started ∣ r0}" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#P"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#customer_accept\/inv19\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD16"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTreq_ServiceTeav" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="cost_decision'" org.eventb.core.type="ℙ(REQUEST×BOOL)"/>
+        <org.eventb.core.poIdentifier name="u" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="r" org.eventb.core.type="REQUEST"/>
+        <org.eventb.core.poIdentifier name="req_status'" org.eventb.core.type="ℙ(REQUEST×STATUS)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPreq_ServiceTeav(" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTIDENTreq_ServiceTeav" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="u∈registered" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#P|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="r∈requests" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#P|org.eventb.core.guard#*"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPreq_ServiceTeav)" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeav(" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="req_customer(r)=u" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#P|org.eventb.core.guard#+"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPreq_ServiceTeav" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeav)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="req_status(r)=assessed" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#P|org.eventb.core.guard#,"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="customer_reject/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeaw("/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="r∈dom(req_customer)∧req_customer∈REQUEST ⇸ USER" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#Q|org.eventb.core.guard#+"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#Q|org.eventb.core.guard#+"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeaw("/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="customer_reject/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeaw)"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="r∈dom(req_status)∧req_status∈REQUEST ⇸ STATUS" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#Q|org.eventb.core.guard#,"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#Q|org.eventb.core.guard#,"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeaw)"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="customer_reject/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeaw"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="req_status{r ↦ rejected}∈requests → STATUS" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#Q"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#customer_reject\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotos|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="customer_reject/inv12/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeaw"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="cost_decision{r ↦ FALSE}∈requests ⇸ BOOL" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#@"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#Q"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#@"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#customer_reject\/inv12\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotoy|org.eventb.core.poPredicate#PRD9"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="customer_reject/inv14/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeaw"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r0⦂REQUEST·r0∈started_jobs⇒(req_status{r ↦ rejected})(r0)=started" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#Q"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#customer_reject\/inv14\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySoto~|org.eventb.core.poPredicate#PRD11"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="customer_reject/inv19/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeaw"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="open_jobs={r0⦂REQUEST·r0∈requests∧(req_status{r ↦ rejected})(r0)=started ∣ r0}" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#Q"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#customer_reject\/inv19\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD16"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTreq_ServiceTeaw" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="cost_decision'" org.eventb.core.type="ℙ(REQUEST×BOOL)"/>
+        <org.eventb.core.poIdentifier name="u" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="r" org.eventb.core.type="REQUEST"/>
+        <org.eventb.core.poIdentifier name="req_status'" org.eventb.core.type="ℙ(REQUEST×STATUS)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPreq_ServiceTeaw(" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTIDENTreq_ServiceTeaw" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="u∈registered" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#Q|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="r∈requests" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#Q|org.eventb.core.guard#*"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPreq_ServiceTeaw)" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeaw(" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="req_customer(r)=u" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#Q|org.eventb.core.guard#+"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPreq_ServiceTeaw" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeaw)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="req_status(r)=assessed" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#Q|org.eventb.core.guard#,"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="allocate_team/grd2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeax'"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="u∈dom(role)∧role∈USER ⇸ ROLE" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#R|org.eventb.core.guard#+"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#R|org.eventb.core.guard#+"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeax'"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="allocate_team/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeax)"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="r∈dom(req_status)∧req_status∈REQUEST ⇸ STATUS" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#R|org.eventb.core.guard#-"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#R|org.eventb.core.guard#-"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeax)"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="allocate_team/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeax"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="req_status{r ↦ allocated}∈requests → STATUS" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#R"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#allocate_team\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotos|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="allocate_team/inv14/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeax"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r0⦂REQUEST·r0∈started_jobs⇒(req_status{r ↦ allocated})(r0)=started" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#R"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#allocate_team\/inv14\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySoto~|org.eventb.core.poPredicate#PRD11"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="allocate_team/inv19/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeax"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="open_jobs={r0⦂REQUEST·r0∈requests∧(req_status{r ↦ allocated})(r0)=started ∣ r0}" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#R"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#allocate_team\/inv19\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD16"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="allocate_team/inv20/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeax"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="req_ServiceTeam{r ↦ t}∈requests ⇸ TEAM" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#O"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#R"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#O"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#allocate_team\/inv20\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD17"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTreq_ServiceTeax" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="u" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="r" org.eventb.core.type="REQUEST"/>
+        <org.eventb.core.poIdentifier name="req_ServiceTeam'" org.eventb.core.type="ℙ(REQUEST×TEAM)"/>
+        <org.eventb.core.poIdentifier name="t" org.eventb.core.type="TEAM"/>
+        <org.eventb.core.poIdentifier name="req_status'" org.eventb.core.type="ℙ(REQUEST×STATUS)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPreq_ServiceTeax'" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTIDENTreq_ServiceTeax" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="u∈registered" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#R|org.eventb.core.guard#*"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPreq_ServiceTeax)" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeax'" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="role(u)=admin_role" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#R|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="r∈requests" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#R|org.eventb.core.guard#,"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPreq_ServiceTeax" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeax)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="req_status(r)=approved" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#R|org.eventb.core.guard#-"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="t∈TEAM" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#R|org.eventb.core.guard#."/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="start_job/grd2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeay'"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="r∈dom(req_status)∧req_status∈REQUEST ⇸ STATUS" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#S|org.eventb.core.guard#*"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#S|org.eventb.core.guard#*"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeay'"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="start_job/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeay("/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="r∈dom(req_ServiceTeam)∧req_ServiceTeam∈REQUEST ⇸ TEAM" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#S|org.eventb.core.guard#+"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#S|org.eventb.core.guard#+"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeay("/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="start_job/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeay"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="req_status{r ↦ started}∈requests → STATUS" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#S"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#start_job\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotos|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="start_job/inv13/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeay"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="started_jobs∪{r}⊆requests" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#A"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#S"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#A"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#start_job\/inv13\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotoy|org.eventb.core.poPredicate#PRD10"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="start_job/inv14/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeay"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r0⦂REQUEST·r0∈started_jobs∪{r}⇒(req_status{r ↦ started})(r0)=started" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#S"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#start_job\/inv14\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySoto~|org.eventb.core.poPredicate#PRD11"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="start_job/inv19/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeay"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="open_jobs={r0⦂REQUEST·r0∈requests∧(req_status{r ↦ started})(r0)=started ∣ r0}" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#S"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#start_job\/inv19\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD16"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTreq_ServiceTeay" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="r" org.eventb.core.type="REQUEST"/>
+        <org.eventb.core.poIdentifier name="t" org.eventb.core.type="TEAM"/>
+        <org.eventb.core.poIdentifier name="req_status'" org.eventb.core.type="ℙ(REQUEST×STATUS)"/>
+        <org.eventb.core.poIdentifier name="started_jobs'" org.eventb.core.type="ℙ(REQUEST)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPreq_ServiceTeay'" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTIDENTreq_ServiceTeay" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="r∈requests" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#S|org.eventb.core.guard#)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPreq_ServiceTeay(" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeay'" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="req_status(r)=allocated" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#S|org.eventb.core.guard#*"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPreq_ServiceTeay" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTHYPreq_ServiceTeay(" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="req_ServiceTeam(r)=t" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#S|org.eventb.core.guard#+"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="report_progress/inv16/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeaz"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="log_req{l ↦ r}∈job_logs∪{l} → requests" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#D"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#T"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#D"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#report_progress\/inv16\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySoto~|org.eventb.core.poPredicate#PRD13"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="report_progress/inv17/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTALLHYPreq_ServiceTeaz"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="log_actor{l ↦ u}∈job_logs∪{l} → registered" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#E"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#T"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#E"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poSequent#report_progress\/inv17\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySoto~|org.eventb.core.poPredicate#PRD14"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTreq_ServiceTeaz" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="job_logs'" org.eventb.core.type="ℙ(LOG)"/>
+        <org.eventb.core.poIdentifier name="u" org.eventb.core.type="USER"/>
+        <org.eventb.core.poIdentifier name="log_req'" org.eventb.core.type="ℙ(LOG×REQUEST)"/>
+        <org.eventb.core.poIdentifier name="r" org.eventb.core.type="REQUEST"/>
+        <org.eventb.core.poIdentifier name="log_actor'" org.eventb.core.type="ℙ(LOG×USER)"/>
+        <org.eventb.core.poIdentifier name="l" org.eventb.core.type="LOG"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPreq_ServiceTeaz" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#EVTIDENTreq_ServiceTeaz" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="u∈registered" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#T|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="r∈started_jobs" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#T|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="l∈LOG ∖ job_logs" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.event#T|org.eventb.core.guard#,"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPMySotos" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="registered⊆USER" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#\/"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="role∈registered → ROLE" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#0"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="requests⊆REQUEST" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#1"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="req_status∈requests → STATUS" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="req_customer∈requests → registered" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#3"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPMySotou" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotos" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="∀r⦂REQUEST·r∈requests⇒role(req_customer(r))=customer_role" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="req_surveyor∈requests ⇸ registered" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#5"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPMySotoy" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotou" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="∀r⦂REQUEST·r∈dom(req_surveyor)⇒role(req_surveyor(r))=surveyor_role" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#&gt;"/>
+        <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="req_cost∈requests ⇸ ℕ" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#?"/>
+        <org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="cost_decision∈requests ⇸ BOOL" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#@"/>
+        <org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="started_jobs⊆requests" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#A"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPMySoto~" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySotoy" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="∀r⦂REQUEST·r∈started_jobs⇒req_status(r)=started" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#B"/>
+        <org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="job_logs⊆LOG" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#C"/>
+        <org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="log_req∈job_logs → requests" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#D"/>
+        <org.eventb.core.poPredicate name="PRD14" org.eventb.core.predicate="log_actor∈job_logs → registered" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#E"/>
+        <org.eventb.core.poPredicate name="PRD15" org.eventb.core.predicate="open_jobs⊆requests" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#L"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Coursework2/System.bpo|org.eventb.core.poFile#System|org.eventb.core.poPredicateSet#HYPMySoto~" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD16" org.eventb.core.predicate="open_jobs={r⦂REQUEST·r∈requests∧req_status(r)=started ∣ r}" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#M"/>
+        <org.eventb.core.poPredicate name="PRD17" org.eventb.core.predicate="req_ServiceTeam∈requests ⇸ TEAM" org.eventb.core.source="/Coursework2/System.bum|org.eventb.core.machineFile#System|org.eventb.core.invariant#O"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

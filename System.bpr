@@ -2698,12 +2698,12 @@
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
             <org.eventb.core.prIdent name="started" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
         <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
         <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
-        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
         <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
         <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="inv10/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="r" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="REQUEST,ROLE,USER">
         <org.eventb.core.lang name="L"/>
@@ -8045,11 +8045,11 @@
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
         <org.eventb.core.prPred name="p0" org.eventb.core.predicate="req_status(r)=started"/>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
         <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
-        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="complete_work/inv13/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="p0" org.eventb.core.prSets="REQUEST,STATUS">
         <org.eventb.core.lang name="L"/>
@@ -8358,11 +8358,11 @@
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
         <org.eventb.core.prPred name="p0" org.eventb.core.predicate="req_status(r)=started"/>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
         <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
-        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="complete_work/inv14/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="r0" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prSets="REQUEST,STATUS">
         <org.eventb.core.lang name="L"/>
@@ -8616,17 +8616,17 @@
         <org.eventb.core.prPred name="p39" org.eventb.core.predicate="¬started=closed"/>
         <org.eventb.core.prPred name="p3" org.eventb.core.predicate="req_status(r)=started"/>
         <org.eventb.core.prPred name="p63" org.eventb.core.predicate="∀r0⦂REQUEST·r0∈started_jobs⇒req_status(r0)=req_status(r)"/>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
-        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
-        <org.eventb.core.prReas name="r10" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
-        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
         <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.funOvr:1"/>
-        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
         <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
+        <org.eventb.core.prReas name="r10" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
         <org.eventb.core.prReas name="r9" org.eventb.core.prRID="org.eventb.core.seqprover.falseHyp"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="complete_work/inv19/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="REQUEST,STATUS">
         <org.eventb.core.lang name="L"/>
@@ -8925,12 +8925,12 @@
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
         <org.eventb.core.prPred name="p2" org.eventb.core.predicate="req_status(r)=started"/>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
-        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
         <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="close_job/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="REQUEST,STATUS">
         <org.eventb.core.lang name="L"/>
@@ -9511,11 +9511,11 @@
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
             <org.eventb.core.prIdent name="started" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
         <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
-        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="close_job/inv14/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="r0" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prSets="REQUEST,STATUS">
         <org.eventb.core.lang name="L"/>
@@ -9756,16 +9756,16 @@
         <org.eventb.core.prPred name="p51" org.eventb.core.predicate="req_status∈REQUEST ⇸ STATUS"/>
         <org.eventb.core.prPred name="p26" org.eventb.core.predicate="¬approved=rejected"/>
         <org.eventb.core.prPred name="p39" org.eventb.core.predicate="¬started=closed"/>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
-        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
-        <org.eventb.core.prReas name="r9" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
-        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
         <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.funOvr:1"/>
-        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
         <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
+        <org.eventb.core.prReas name="r9" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="close_job/inv19/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="REQUEST,STATUS">
         <org.eventb.core.lang name="L"/>
@@ -10049,12 +10049,12 @@
             <org.eventb.core.prIdent name="rejected" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
         <org.eventb.core.prPred name="p39" org.eventb.core.predicate="¬started=closed"/>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
-        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
         <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="customer_accept/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="REQUEST,USER">
         <org.eventb.core.lang name="L"/>
@@ -10974,11 +10974,11 @@
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
             <org.eventb.core.prIdent name="started" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
         <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
-        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="customer_accept/inv12/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="p0,p1" org.eventb.core.prSets="REQUEST,STATUS,USER">
         <org.eventb.core.lang name="L"/>
@@ -11302,11 +11302,11 @@
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
             <org.eventb.core.prIdent name="started" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
         <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
-        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="customer_accept/inv14/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="r0" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="REQUEST,STATUS,USER">
         <org.eventb.core.lang name="L"/>
@@ -11569,16 +11569,16 @@
         <org.eventb.core.prPred name="p52" org.eventb.core.predicate="req_status∈REQUEST ⇸ STATUS"/>
         <org.eventb.core.prPred name="p27" org.eventb.core.predicate="¬approved=rejected"/>
         <org.eventb.core.prPred name="p40" org.eventb.core.predicate="¬started=closed"/>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
-        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
-        <org.eventb.core.prReas name="r9" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
-        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
         <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.funOvr:1"/>
-        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
         <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
+        <org.eventb.core.prReas name="r9" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="customer_accept/inv19/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prSets="REQUEST,STATUS,USER">
         <org.eventb.core.lang name="L"/>
@@ -11877,12 +11877,12 @@
         <org.eventb.core.prPred name="p40" org.eventb.core.predicate="¬started=closed">
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
-        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
         <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="customer_reject/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="REQUEST,USER">
         <org.eventb.core.lang name="L"/>
@@ -12802,11 +12802,11 @@
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
             <org.eventb.core.prIdent name="started" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
         <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
-        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="customer_reject/inv12/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="p0,p1" org.eventb.core.prSets="REQUEST,STATUS,USER">
         <org.eventb.core.lang name="L"/>
@@ -13130,11 +13130,11 @@
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
             <org.eventb.core.prIdent name="started" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
         <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
-        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="customer_reject/inv14/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="r0" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="REQUEST,STATUS,USER">
         <org.eventb.core.lang name="L"/>
@@ -13397,16 +13397,16 @@
         <org.eventb.core.prPred name="p52" org.eventb.core.predicate="req_status∈REQUEST ⇸ STATUS"/>
         <org.eventb.core.prPred name="p27" org.eventb.core.predicate="¬approved=rejected"/>
         <org.eventb.core.prPred name="p40" org.eventb.core.predicate="¬started=closed"/>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
-        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
-        <org.eventb.core.prReas name="r9" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
-        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
         <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.funOvr:1"/>
-        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
         <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
+        <org.eventb.core.prReas name="r9" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="customer_reject/inv19/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prSets="REQUEST,STATUS,USER">
         <org.eventb.core.lang name="L"/>
@@ -13705,12 +13705,12 @@
         <org.eventb.core.prPred name="p40" org.eventb.core.predicate="¬started=closed">
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
-        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
         <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="allocate_team/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="ROLE,USER">
         <org.eventb.core.lang name="L"/>
@@ -14627,11 +14627,11 @@
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
             <org.eventb.core.prIdent name="started" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
         <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
-        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="allocate_team/inv14/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="r0" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="REQUEST,ROLE,STATUS,USER">
         <org.eventb.core.lang name="L"/>
@@ -14901,16 +14901,16 @@
         <org.eventb.core.prPred name="p27" org.eventb.core.predicate="¬approved=rejected"/>
         <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀r0⦂REQUEST·r0∈started_jobs⇒(req_status{r ↦ allocated})(r0)=started"/>
         <org.eventb.core.prPred name="p40" org.eventb.core.predicate="¬started=closed"/>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
-        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
-        <org.eventb.core.prReas name="r9" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
-        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
         <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.funOvr:1"/>
-        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
         <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
+        <org.eventb.core.prReas name="r9" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="allocate_team/inv19/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prSets="REQUEST,ROLE,STATUS,USER">
         <org.eventb.core.lang name="L"/>
@@ -15213,12 +15213,12 @@
         <org.eventb.core.prPred name="p40" org.eventb.core.predicate="¬started=closed">
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
-        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
         <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="start_job/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="REQUEST,STATUS">
         <org.eventb.core.lang name="L"/>
@@ -15807,11 +15807,11 @@
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
             <org.eventb.core.prIdent name="started" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
         <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
-        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="start_job/inv13/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="REQUEST">
         <org.eventb.core.lang name="L"/>
@@ -16473,16 +16473,16 @@
         <org.eventb.core.prPred name="p40" org.eventb.core.predicate="¬started=closed">
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
-        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
-        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
         <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.funOvr:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
         <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
         <org.eventb.core.prReas name="r9" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
-        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
-        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="start_job/inv19/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prSets="REQUEST,STATUS,TEAM">
         <org.eventb.core.lang name="L"/>
@@ -16788,12 +16788,12 @@
         <org.eventb.core.prPred name="p40" org.eventb.core.predicate="¬started=closed">
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
-        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
         <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="report_progress/inv16/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
         <org.eventb.core.lang name="L"/>
@@ -17968,11 +17968,11 @@
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
             <org.eventb.core.prIdent name="started" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
         <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
-        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="start_job/grd3/WD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="REQUEST,STATUS,TEAM">
         <org.eventb.core.lang name="L"/>
@@ -18286,13 +18286,13 @@
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
             <org.eventb.core.prIdent name="started" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
         <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
         <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
         <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
-        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="list_outstanding job/inv18/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="REQUEST,STATUS">
         <org.eventb.core.lang name="L"/>
@@ -27112,14 +27112,14 @@
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
             <org.eventb.core.prIdent name="started" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
         <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
-        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
         <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.funOvr:1"/>
-        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
         <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
         <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="1_register_customer/inv7/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
         <org.eventb.core.lang name="L"/>
@@ -27718,14 +27718,14 @@
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
             <org.eventb.core.prIdent name="started" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
-        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
         <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.funOvr:1"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
         <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
         <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="1_register_customer/inv17/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
         <org.eventb.core.lang name="L"/>
@@ -29264,14 +29264,14 @@
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
             <org.eventb.core.prIdent name="started" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
         <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
-        <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
-        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
         <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.funOvr:1"/>
+        <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
         <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
         <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="2_submit_request/inv7/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="p0" org.eventb.core.prSets="ROLE,USER">
         <org.eventb.core.lang name="L"/>
@@ -30686,15 +30686,15 @@
         <org.eventb.core.prPred name="p27" org.eventb.core.predicate="¬approved=allocated"/>
         <org.eventb.core.prPred name="p26" org.eventb.core.predicate="¬approved=rejected"/>
         <org.eventb.core.prPred name="p39" org.eventb.core.predicate="¬started=closed"/>
-        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
-        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
-        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
         <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.funOvr:1"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
+        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
         <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
         <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="2_submit_request/inv16/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="p0" org.eventb.core.prSets="ROLE,USER">
         <org.eventb.core.lang name="L"/>
@@ -31548,8 +31548,8 @@
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
         <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
         <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="2_submit_request/inv20/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="p0" org.eventb.core.prSets="ROLE,USER">
@@ -32432,11 +32432,11 @@
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
             <org.eventb.core.prIdent name="started" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
         <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
-        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="3_allocate_surveyor/grd4/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prSets="REQUEST,ROLE,STATUS,USER">
         <org.eventb.core.lang name="L"/>
@@ -33088,11 +33088,11 @@
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
             <org.eventb.core.prIdent name="started" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
         <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
-        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="3_allocate_surveyor/inv7/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="p0,p1" org.eventb.core.prSets="REQUEST,ROLE,STATUS,USER">
         <org.eventb.core.lang name="L"/>
@@ -33415,11 +33415,11 @@
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
             <org.eventb.core.prIdent name="started" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
         <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
-        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="3_allocate_surveyor/inv10/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="r0" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prSets="REQUEST,ROLE,STATUS,USER">
         <org.eventb.core.lang name="L"/>
@@ -33786,16 +33786,16 @@
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
             <org.eventb.core.prIdent name="started" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
-        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
-        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
-        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
         <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.funOvr:1"/>
-        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-        <org.eventb.core.prReas name="r9" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
         <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
+        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+        <org.eventb.core.prReas name="r9" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="3_allocate_surveyor/inv14/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="r0" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="REQUEST,ROLE,STATUS,USER">
         <org.eventb.core.lang name="L"/>
@@ -34060,16 +34060,16 @@
         <org.eventb.core.prPred name="p63" org.eventb.core.predicate="STATUS={req_status(r),pending_assessment,assessed,approved,rejected,allocated,started,completed,closed}"/>
         <org.eventb.core.prPred name="p27" org.eventb.core.predicate="¬approved=rejected"/>
         <org.eventb.core.prPred name="p40" org.eventb.core.predicate="¬started=closed"/>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
-        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
-        <org.eventb.core.prReas name="r9" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
-        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
         <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.funOvr:1"/>
-        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
         <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
+        <org.eventb.core.prReas name="r9" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="3_allocate_surveyor/inv19/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prSets="REQUEST,ROLE,STATUS,USER">
         <org.eventb.core.lang name="L"/>
@@ -34367,12 +34367,12 @@
         <org.eventb.core.prPred name="p40" org.eventb.core.predicate="¬started=closed">
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
-        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
         <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="4_surveyor_assessment/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="REQUEST,STATUS">
         <org.eventb.core.lang name="L"/>
@@ -34953,11 +34953,11 @@
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
             <org.eventb.core.prIdent name="started" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
         <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
-        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="4_surveyor_assessment/inv11/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="p0" org.eventb.core.prSets="REQUEST,STATUS">
         <org.eventb.core.lang name="L"/>
@@ -35266,11 +35266,11 @@
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
             <org.eventb.core.prIdent name="started" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
         <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
-        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="4_surveyor_assessment/inv14/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="r0" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prSets="REQUEST,STATUS">
         <org.eventb.core.lang name="L"/>
@@ -35511,16 +35511,16 @@
         <org.eventb.core.prPred name="p51" org.eventb.core.predicate="req_status∈REQUEST ⇸ STATUS"/>
         <org.eventb.core.prPred name="p26" org.eventb.core.predicate="¬approved=rejected"/>
         <org.eventb.core.prPred name="p39" org.eventb.core.predicate="¬started=closed"/>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
-        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
-        <org.eventb.core.prReas name="r9" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
-        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
         <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.funOvr:1"/>
-        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
         <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
+        <org.eventb.core.prReas name="r9" org.eventb.core.prRID="org.eventb.core.seqprover.funImgSimplifies:0"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="4_surveyor_assessment/inv19/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="REQUEST,STATUS">
         <org.eventb.core.lang name="L"/>
@@ -35804,11 +35804,11 @@
         <org.eventb.core.prPred name="p39" org.eventb.core.predicate="¬started=closed">
             <org.eventb.core.prIdent name="closed" org.eventb.core.type="STATUS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
         <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
-        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
         <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
     </org.eventb.core.prProof>
 </org.eventb.core.prFile>

@@ -28,7 +28,7 @@
     <org.eventb.core.invariant name="C" org.eventb.core.label="inv15" org.eventb.core.predicate="job_logs ⊆ LOG"/>
     <org.eventb.core.invariant name="D" org.eventb.core.label="inv16" org.eventb.core.predicate="log_req ∈ job_logs → requests"/>
     <org.eventb.core.invariant name="E" org.eventb.core.label="inv17" org.eventb.core.predicate="log_actor ∈ job_logs → registered"/>
-    <org.eventb.core.event name="F" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+    <org.eventb.core.event name="F" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
         <org.eventb.core.action name="'" org.eventb.core.assignment="registered ≔ ∅" org.eventb.core.label="act1"/>
         <org.eventb.core.action name="(" org.eventb.core.assignment="role ≔ ∅" org.eventb.core.label="act2"/>
         <org.eventb.core.action name=")" org.eventb.core.assignment="requests ≔ ∅" org.eventb.core.label="act3"/>
